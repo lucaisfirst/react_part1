@@ -8,14 +8,34 @@
     <div id="root"></div>
     <script type="text/babel">
         const rootElement = document.getElementById("root");
-        const element = (
+        const paint =(title, description) => (
             <>
-                <h1>Hi</h1>
-                <h3>bye</h3>
-                <h5>children</h5>
+                <h1>{title}</h1>
+                <h3>{description}</h3>
             </>
         );
-        console.log(element);
+        
+        const Paint =({title, description, children}) => (
+            <>
+                <h1>{title}</h1>
+                <h3>{description}</h3>
+                {children}
+            </>
+        );
+        const Good = () => (
+            <h3>Good</h3>
+        )
+        const element = (
+            <>
+                <Paint title="Good" description="good">
+                    <Good />
+                    <Good />
+                    <Good />
+                    <Good />
+                    <Good />
+                </Paint>
+            </>
+        );
         ReactDOM.render(element, rootElement);
     </script>
 </body>
