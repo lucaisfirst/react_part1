@@ -8,32 +8,17 @@
     <div id="root"></div>
     <script type="text/babel">
         const rootElement = document.getElementById("root");
-        const paint =(title, description) => (
-            <>
-                <h1>{title}</h1>
-                <h3>{description}</h3>
-            </>
-        );
         
-        const Paint =({title, description, children}) => (
-            <>
-                <h1>{title}</h1>
-                <h3>{description}</h3>
-                {children}
-            </>
-        );
-        const Good = () => (
-            <h3>Good</h3>
-        )
+        function Number ({ number }) {
+            return number % 2 ===0 ? <h1> {number} </h1> : <h3> {number} </h3>;
+        }
+
         const element = (
             <>
-                <Paint title="Good" description="good">
-                    <Good />
-                    <Good />
-                    <Good />
-                    <Good />
-                    <Good />
-                </Paint>
+                <Number number={1}/>
+                <Number number={2}/>
+                <Number number={3}/>
+                <Number number={4}/>
             </>
         );
         ReactDOM.render(element, rootElement);
