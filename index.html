@@ -18,19 +18,17 @@
     setInterval(random, 1000);
     </script> -->
     <script type="text/babel">
-        const rootElement = document.getElementById("root");
-        function random() {
-            const number = Math.floor(Math.random() * (10 - 1) + 1);
+        function tick() {
             const element = (
-                <>
-                    <button>{number}</button>
-                    <p>{number}</p>
-                </>
+                <div>
+                    <h1>Hello, world!</h1>
+                    <h2>It is {new Date().toLocaleTimeString()}.</h2>
+                </div>
             );
-            ReactDOM.render(element, rootElement);
+            ReactDOM.render(element, document.getElementById('root'));
         }
 
-        setInterval(random, 1000);
+        setInterval(tick, 1000);
     </script>
 </body>
 
