@@ -1,35 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<body>
-    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <body>
     <div id="root"></div>
-    <!-- <script>
-        const rootElement = document.getElementById("root");
-        function random() {
-            const number = Math.floor(Math.random() * (10 - 1) + 1);
-            const element = `
-            <button>${number}</button>
-            `;
-            rootElement.innerHTML = element;
-        }
-    setInterval(random, 1000);
-    </script> -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
-        function tick() {
-            const element = (
-                <div>
-                    <h1>Hello, world!</h1>
-                    <h2>It is {new Date().toLocaleTimeString()}.</h2>
-                </div>
-            );
-            ReactDOM.render(element, document.getElementById('root'));
-        }
+      const rootElement = document.getElementById("root");
 
-        setInterval(tick, 1000);
+      const handleClick = () => alert("Pressed");
+      const handleMouseOut = () => alert("Bye");
+      const element = (
+        <button onClick={handleClick} onMouseOut={handleMouseOut}>
+          Press
+        </button>
+      );
+      ReactDOM.render(element, rootElement);
     </script>
-</body>
-
+  </body>
 </html>
