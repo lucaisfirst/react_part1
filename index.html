@@ -9,6 +9,7 @@
       const rootElement = document.getElementById("root");
 
       const App = () => {
+        console.log("render")
         const [keyword, setKeyword] = React.useState(() =>
           window.localStorage.getItem("keyword")
         );
@@ -16,6 +17,7 @@
         const [typing, setTyping] = React.useState(false);
 
         function handleChange(event) {
+          console.log("render")
           window.localStorage.setItem("keyword", event.target.value);
           setKeyword(event.target.value);
           setTyping(true);
